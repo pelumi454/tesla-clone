@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
+  const cars = useSelector(selectCars);
   return (
     <div>
       <Container>
@@ -14,19 +15,28 @@ function Header() {
           <img src="/images/logo.svg" alt="" />
         </a>
         <Menu>
-          <a>Model S</a>
-          <a>Model S</a>
-          <a>Model S</a>
+          {cars &&
+            cars.map((car, index) => (
+              <a key={index} href="#">
+                {car}
+              </a>
+            ))}
         </Menu>
         <RightMenu>
-          <a>Model S</a>
-          <a>Model S</a>
+          <a href="#">Shop</a>
+          <a href="#">Tesla Account</a>
           <CustomMenu onClick={() => setBurgerStatus(true)} />
         </RightMenu>
         <BurgerNav show={burgerStatus}>
           <CloseWrapper>
             <CustomClose onClick={() => setBurgerStatus(false)} />
           </CloseWrapper>
+          {cars &&
+            cars.map((car, index) => (
+              <li key={index}>
+                <a href="#">{car}</a>
+              </li>
+            ))}
           <li>
             <a href="#">Used Inventory</a>
           </li>
