@@ -10,7 +10,24 @@ function Header() {
           <img src="/images/logo.svg" alt="" />
         </a>
         <Menu>
-          <a></a>
+          <li>
+            <a href="#">Used Inventory</a>
+          </li>
+          <li>
+            <a href="#">Trade-in</a>
+          </li>
+          <li>
+            <a href="#">Cybertruck</a>
+          </li>
+          <li>
+            <a href="#">Roadaster</a>
+          </li>
+          <li>
+            <a href="#">Existing Inventory</a>
+          </li>
+          <li>
+            <a href="#">Existing Inventory</a>
+          </li>
         </Menu>
       </div>
     );
